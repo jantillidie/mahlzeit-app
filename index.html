@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mahlzeit</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="assets/js/main.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <nav class="top-nav-nav">
+                <h1 class="top-nav-logo">Mahlzeit</h1>
+                <ul class="top-nav-ul">
+                    <li class="top-nav-li">Entdecken</li>
+                    <li class="top-nav-li">Kategorien</li>
+                    <li class="top-nav-li">Zufallsrezept</li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="homepage-main">
+            <section class="intro-section">
+                <h2 class="main-title">Was kochen wir heute?</h2>
+                <p class="small-text">
+                    Suche nach einem Gericht oder lass dich überraschen.
+                </p>
+            </section>
+            <section class="search-section">
+                <form action="" class="search-form">
+                    <input type="search" class="search-input" />
+                    <button class="search-btn" id="search-btn">
+                        🔍 Suchen
+                    </button>
+                </form>
+                <button class="surprise-btn" id="surprise-btn">
+                    ⤮ Überrasch mich
+                </button>
+            </section>
+            <section class="categories-section">
+                <button class="category-btn" id="category-type">Alle</button>
+            </section>
+            <section class="recipes-section">
+                <div class="recipes-card" id="recipes-card">
+                    <div class="recipe-card-pic" id="recipe-card-pic"></div>
+                    <div class="recipe-card-content" id="recipe-card-content">
+                        <div
+                            class="recipe-card-categories"
+                            id="recipe-card-categories"
+                        >
+                            <span
+                                class="recipe-card-category"
+                                id="recipe-card-category"
+                            ></span>
+                        </div>
+                        <h3
+                            class="recipe-card-title"
+                            id="recipe-card-title"
+                        ></h3>
+                        <a
+                            href="#"
+                            class="recipe-card-link"
+                            id="recipe-card-link"
+                        ></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p class="footer-content">
+                Rezeptdaten von
+                <a href="https://themealdb.com" class="footer-link"
+                    >TheMealDB.com</a
+                >
+            </p>
+        </footer>
+    </body>
+</html>

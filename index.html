@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,60 +10,60 @@
     <body>
         <header>
             <nav class="top-nav-nav">
-                <h1 class="top-nav-logo">Mahlzeit</h1>
+                <a href="index.html" class="top-nav-logo">Mahlzeit</a>
                 <ul class="top-nav-ul">
-                    <li class="top-nav-li">Entdecken</li>
-                    <li class="top-nav-li">Kategorien</li>
-                    <li class="top-nav-li">Zufallsrezept</li>
+                    <li class="top-nav-li">
+                        <a href="#" class="top-nav-a">Entdecken</a>
+                    </li>
+                    <li class="top-nav-li">
+                        <a href="#" class="top-nav-a">Kategorien</a>
+                    </li>
+                    <li class="top-nav-li">
+                        <a href="#" class="top-nav-a">Zufallsrezept</a>
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <main class="homepage-main">
             <section class="intro-section">
-                <h2 class="main-title">Was kochen wir heute?</h2>
+                <h1 class="main-title">Was kochen wir heute?</h1>
                 <p class="small-text">
                     Suche nach einem Gericht oder lass dich überraschen.
                 </p>
             </section>
             <section class="search-section">
                 <form action="" class="search-form">
-                    <input type="search" class="search-input" />
+                    <input
+                        type="search"
+                        class="search-input"
+                        placeholder="Arrabiata"
+                        aria-label="Gericht suchen"
+                    />
                     <button class="search-btn" id="search-btn">
                         🔍 Suchen
                     </button>
                 </form>
-                <button class="surprise-btn" id="surprise-btn">
+                <button class="surprise-btn" id="surprise-btn" type="button">
                     ⤮ Überrasch mich
                 </button>
             </section>
             <section class="categories-section">
-                <button class="category-btn" id="category-type">Alle</button>
+                <button class="category-btn"></button>
             </section>
             <section class="recipes-section">
-                <div class="recipes-card" id="recipes-card">
-                    <div class="recipe-card-pic" id="recipe-card-pic"></div>
-                    <div class="recipe-card-content" id="recipe-card-content">
-                        <div
-                            class="recipe-card-categories"
-                            id="recipe-card-categories"
-                        >
-                            <span
-                                class="recipe-card-category"
-                                id="recipe-card-category"
-                            ></span>
-                        </div>
-                        <h3
-                            class="recipe-card-title"
-                            id="recipe-card-title"
-                        ></h3>
-                        <a
-                            href="#"
-                            class="recipe-card-link"
-                            id="recipe-card-link"
-                        ></a>
+                <article class="recipes-card">
+                    <div class="recipe-card-img-div">
+                        <img alt="" class="recipe-card-img" />
                     </div>
-                </div>
+                    <div class="recipe-card-content">
+                        <div class="recipe-card-categories">
+                            <span class="recipe-card-category"></span>
+                        </div>
+                        <h3 class="recipe-card-title"></h3>
+                        <a href="#" class="recipe-card-link"></a>
+                    </div>
+                </article>
             </section>
         </main>
         <footer>

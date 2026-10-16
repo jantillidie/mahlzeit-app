@@ -37,20 +37,49 @@
                     <input
                         type="search"
                         class="search-input"
-                        placeholder="Arrabiata"
+                        placeholder="z. B. Arrabiata"
                         aria-label="Gericht suchen"
                     />
                     <button class="search-btn" id="search-btn">
-                        🔍 Suchen
+                        <svg
+                            class="search-icon"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M19 11.5a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0m-2.107 5.42l3.08 3.08"
+                            />
+                        </svg>
+                        Suchen
                     </button>
                 </form>
                 <button class="surprise-btn" id="surprise-btn" type="button">
-                    ⤮ Überrasch mich
+                    <svg
+                        class="surprise-icon"
+                        viewBox="0 0 14 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m.5 13.5l13-13m-4 0h4v4M9 9l4.5 4.5m-4 0h4v-4M5 5L.5.5"
+                        />
+                    </svg>
+                    Überrasch mich
                 </button>
             </section>
             <section class="categories-section">
                 <button class="category-btn"></button>
+                <button class="category-btn category-btn-inactive"></button>
             </section>
+            <h2>Gerichte</h2>
             <section class="recipes-section">
                 <article class="recipes-card">
                     <div class="recipe-card-img-div">
@@ -61,7 +90,7 @@
                             <span class="recipe-card-category"></span>
                         </div>
                         <h3 class="recipe-card-title"></h3>
-                        <a href="#" class="recipe-card-link"></a>
+                        <a href="" class="recipe-card-link">Rezept ansehen →</a>
                     </div>
                 </article>
             </section>
@@ -69,7 +98,10 @@
         <footer>
             <p class="footer-content">
                 Rezeptdaten von
-                <a href="https://themealdb.com" class="footer-link"
+                <a
+                    href="https://themealdb.com"
+                    target="_blank"
+                    class="footer-link"
                     >TheMealDB.com</a
                 >
             </p>

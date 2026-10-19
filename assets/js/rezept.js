@@ -4,6 +4,7 @@ const mealImage = document.getElementById("meal-image");
 const mealTags = document.getElementById("meal-tags");
 const videoLink = document.getElementById("video-link");
 const ingredientsList = document.getElementById("ingredients");
+const stepsList = document.getElementById("steps");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -19,6 +20,20 @@ function showIngredients(meal) {
       continue;
     }
     ingredientsList.innerHTML += `<li>${amount} ${name}</li>`;
+  }
+}
+
+function showSteps(meal) {
+  stepsList.innerHTML = "";
+
+  const lines = meal.strInstructions.split("\n");
+
+  for (const line of lines) {
+    const text = line.trim();
+    if (text === "") {
+      continue;
+    }
+    stepsList.innerHTML += `<li>${text}</li>`;
   }
 }
 
@@ -51,6 +66,7 @@ async function loadMeal() {
     videoLink.hidden = false;
   }
   showIngredients(meal);
+  showSteps(meal);
   console.log(meal);
 }
 loadMeal();

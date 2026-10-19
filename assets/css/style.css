@@ -291,3 +291,7 @@ footer {
 .footer-link {
     color: var(--green);
 }
+
+[hidden] {
+    display: none !important;
+}

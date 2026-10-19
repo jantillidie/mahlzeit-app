@@ -3,9 +3,24 @@ const mealName = document.getElementById("meal-name");
 const mealImage = document.getElementById("meal-image");
 const mealTags = document.getElementById("meal-tags");
 const videoLink = document.getElementById("video-link");
+const ingredientsList = document.getElementById("ingredients");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+
+function showIngredients(meal) {
+  ingredientsList.innerHTML = "";
+
+  for (let i = 1; i <= 20; i++) {
+    const name = meal["strIngredient" + i];
+    const amount = meal["strMeasure" + i];
+
+    if (!name) {
+      continue;
+    }
+    ingredientsList.innerHTML += `<li>${amount} ${name}</li>`;
+  }
+}
 
 async function loadMeal() {
   if (id === null) {
@@ -35,7 +50,7 @@ async function loadMeal() {
     videoLink.href = meal.strYoutube;
     videoLink.hidden = false;
   }
-
+  showIngredients(meal);
   console.log(meal);
 }
 loadMeal();

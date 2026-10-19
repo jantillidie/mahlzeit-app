@@ -2,6 +2,7 @@ const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
 const message = document.getElementById("message");
 const recipesSection = document.getElementById("recipes");
+const categoriesSection = document.getElementById("categories");
 
 function showMeals(meals) {
   recipesSection.innerHTML = "";
@@ -50,3 +51,54 @@ searchForm.addEventListener("submit", function (event) {
 });
 
 searchMeals("veg");
+
+async function loadCategories() {
+  const data = await fetchJson(
+    "https://www.themealdb.com/api/json/v1/1/list.php?c=list",
+  );
+  if (data === null) {
+    return;
+  }
+  categoriesSection.innerHTML = `<button class="category-btn" data-category="">Alle</button>`;
+  for (const item of data.meals) {
+    categoriesSection.innerHTML += `<button class="category-btn category-btn-inactive" data-category="${item.strCategory}">${item.strCategory}</button>`;
+  }
+}
+
+loadCategories();
+
+async function loadCategory(category) {
+  message.textContent = "Lade Rezepte...";
+  recipesSection.innerHTML = "";
+
+  const data = await fetchJson(
+    "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + category,
+  );
+
+  if (data === null) {
+    message.textContent = "Funktioniert nicht.";
+    return;
+  }
+
+  message.textContent = "";
+  showMeals(data.meals);
+}
+
+categoriesSection.addEventListener("click", function (event) {
+  const button = event.target.closest(".category-btn");
+  if (button === null) {
+    return;
+  }
+  const buttons = categoriesSection.querySelectorAll(".category-btn");
+  for (const b of buttons) {
+    b.classList.add("category-btn-inactive");
+  }
+  button.classList.remove("category-btn-inactive");
+
+  const category = button.dataset.category;
+  if (category === "") {
+    searchMeals("veg");
+  } else {
+    loadCategory(category);
+  }
+});

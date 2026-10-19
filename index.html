@@ -34,12 +34,13 @@
                 </p>
             </section>
             <section class="search-section">
-                <form action="" class="search-form">
+                <form action="" class="search-form" id="search-form">
                     <input
                         type="search"
                         class="search-input"
                         placeholder="z. B. Arrabiata"
                         aria-label="Gericht suchen"
+                        id="search-input"
                     />
                     <button class="search-btn" id="search-btn">
                         <svg
@@ -81,20 +82,8 @@
                 <button class="category-btn category-btn-inactive"></button>
             </section>
             <h2>Gerichte</h2>
-            <section class="recipes-section">
-                <article class="recipes-card">
-                    <div class="recipe-card-img-div">
-                        <img alt="" class="recipe-card-img" />
-                    </div>
-                    <div class="recipe-card-content">
-                        <div class="recipe-card-categories">
-                            <span class="recipe-card-category"></span>
-                        </div>
-                        <h3 class="recipe-card-title"></h3>
-                        <a href="" class="recipe-card-link">Rezept ansehen →</a>
-                    </div>
-                </article>
-            </section>
+            <p id="message"></p>
+            <section class="recipes-section" id="recipes"></section>
         </main>
         <footer>
             <p class="footer-content">

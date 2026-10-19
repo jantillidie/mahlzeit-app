@@ -3,6 +3,7 @@ const searchInput = document.getElementById("search-input");
 const message = document.getElementById("message");
 const recipesSection = document.getElementById("recipes");
 const categoriesSection = document.getElementById("categories");
+const surpriseBtn = document.getElementById("surprise-btn");
 
 function showMeals(meals) {
   recipesSection.innerHTML = "";
@@ -101,4 +102,18 @@ categoriesSection.addEventListener("click", function (event) {
   } else {
     loadCategory(category);
   }
+});
+
+surpriseBtn.addEventListener("click", async function () {
+  const data = await fetchJson(
+    "https://www.themealdb.com/api/json/v1/1/random.php",
+  );
+
+  if (data === null) {
+    message.textContent = "Funktioniert nicht.";
+    return;
+  }
+
+  const meal = data.meals[0];
+  window.location.href = "rezept.html?id=" + meal.idMeal;
 });

@@ -58,8 +58,8 @@ async function loadMeal() {
   mealImage.alt = meal.strMeal;
 
   mealTags.innerHTML = `
-    <span class="recipe-card-category">${meal.strCategory}</span>
     <span class="recipe-card-category">${meal.strArea}</span>
+    <span class="recipe-card-category">${meal.strCategory}</span>
     `;
   if (meal.strYoutube) {
     videoLink.href = meal.strYoutube;

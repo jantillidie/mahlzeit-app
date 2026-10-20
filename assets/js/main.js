@@ -15,7 +15,8 @@ function showMeals(meals) {
         </div>
         <div class="recipe-card-content">
             <div class="recipe-card-categories">
-                <span class="recipe-card-category"></span>
+                <span class="recipe-card-category">${meal.strArea}</span>
+                <span class="recipe-card-category">${meal.strCategory}</span>
             </div>
             <h3 class="recipe-card-title">${meal.strMeal}</h3>
             <a href="rezept.html?id=${meal.idMeal}" class="recipe-card-link">Rezept ansehen →</a>

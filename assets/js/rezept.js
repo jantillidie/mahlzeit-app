@@ -67,6 +67,5 @@ async function loadMeal() {
   }
   showIngredients(meal);
   showSteps(meal);
-  console.log(meal);
 }
 loadMeal();

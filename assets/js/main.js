@@ -4,6 +4,7 @@ const message = document.getElementById("message");
 const recipesSection = document.getElementById("recipes");
 const categoriesSection = document.getElementById("categories");
 const surpriseBtn = document.getElementById("surprise-btn");
+// const categoryPill = document.getElementById("category-pill")
 
 function showMeals(meals) {
   recipesSection.innerHTML = "";
@@ -24,6 +25,9 @@ function showMeals(meals) {
     </article>
     `;
   }
+  // if (meal.strCategory) {
+  //   categoryPill.hidden = false;
+  // }
 }
 
 async function searchMeals(term) {

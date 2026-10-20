@@ -387,3 +387,7 @@ footer {
     margin-right: 12px;
     font-weight: 700;
 }
+
+.recipe-steps {
+    grid-column: 1 / -1;
+}

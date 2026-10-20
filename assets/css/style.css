@@ -301,7 +301,6 @@ footer {
     text-decoration: none;
     font-family: "DM Sans", sans-serif;
     font-weight: 700;
-    
 }
 
 [hidden] {
@@ -341,9 +340,7 @@ footer {
 #steps li {
     margin-bottom: 0.5rem;
     line-height: 1.5;
-    
 }
-
 
 @media (min-width: 900px) {
     .recipe {
@@ -352,7 +349,8 @@ footer {
     }
 }
 
-.recipe-ingredients, .recipe-steps {
+.recipe-ingredients,
+.recipe-steps {
     display: flex;
     flex-direction: column;
     background: var(--card);
@@ -363,10 +361,29 @@ footer {
     border: 1px solid lightgray;
     padding: 0.5rem 2rem;
 }
+
 .recipe-ingredients ul {
     list-style: none;
     padding: 0;
 }
+
 .recipe-steps ol {
-    padding: 0 1rem;
+    list-style: none;
+    counter-reset: orderedList;
+    padding: 0;
+}
+
+.recipe-steps ol li::before {
+    counter-increment: orderedList;
+    content: counter(orderedList);
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    padding: 5px 0 0 0;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    margin-right: 12px;
+    font-weight: 700;
 }
